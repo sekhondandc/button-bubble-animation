@@ -1,0 +1,71 @@
+:root{
+    --gry: #292929;
+    --wht: #ffffff;
+    --blk: #000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gry);
+}
+.button{
+    background: transparent;
+    outline: none;
+    border: 5px solid var(--wht);
+    width: 260px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.button span{
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--wht);
+    z-index: 1;
+    transition: 0.5s;
+}
+.button div{
+    position: absolute;
+    left: calc((var(--n) - 1) * 25%);
+    width: 25%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--wht);
+    transform: translateY(100%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+.button div:nth-child(2){
+    --n: 1;
+}
+.button div:nth-child(3){
+    --n: 2;
+}
+.button div:nth-child(4){
+    --n: 3;
+}
+.button div:nth-child(5){
+    --n: 4;
+}
+.button:hover span{
+    color: var(--blk);
+}
+.button:hover div{
+    transform: translateY(0) scale(2.2);
+}
